@@ -9,4 +9,8 @@ public class HibernateUI {
 		return new Configuration().configure().buildSessionFactory();
 	}
 	
+	public static void main(String[] args) {
+		System.out.println(getSessionFactory().openSession().isConnected());
+	}
+	
 }

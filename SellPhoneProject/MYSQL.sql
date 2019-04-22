@@ -28,5 +28,10 @@ create table listImage(
     id_product int not null,
     image varchar(500) not null
 );
-
+INSERT INTO `sellphone`.`category` (`category`) VALUES ('HTC');
+INSERT INTO `sellphone`.`category` (`category`) VALUES ('Iphone');
+INSERT INTO `sellphone`.`category` (`category`) VALUES ('Nokia');
+INSERT INTO `sellphone`.`category` (`category`) VALUES ('Sony');
+INSERT INTO `sellphone`.`category` (`category`) VALUES ('Blackberry');
+INSERT INTO `sellphone`.`category` (`category`) VALUES ('SamSung');
 select * from product as p where p.name like 'n';
