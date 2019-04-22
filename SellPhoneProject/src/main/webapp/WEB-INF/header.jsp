@@ -31,8 +31,8 @@
 					</figure>
 				</div>
 				<div class="col-md-6">
-					<form class="form-inline form-tim-kiem">
-						<input type="text" placeholder="Tìm kiếm">
+					<form class="form-inline form-tim-kiem" action="result" method="get">
+						<input type="text" placeholder="Tìm kiếm" name="search">
 						<button>Tìm kiếm</button>
 					</form>
 				</div>

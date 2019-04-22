@@ -29,4 +29,4 @@ create table listImage(
     image varchar(500) not null
 );
 
-select * from product as p order by p.price desc limit 0, 8
+select * from product as p where p.name like 'n';
