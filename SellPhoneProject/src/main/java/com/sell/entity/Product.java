@@ -19,7 +19,7 @@ public class Product {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="numberProduct")
+	@Column(name = "numberProduct")
 	private int id;
 	@Column
 	private String name;
@@ -52,7 +52,7 @@ public class Product {
 	}
 
 	public Product(String name, double price, String description, double discount, int numberOfProduct,
-			Category category, String image) {
+			Category category, String image, String ram, String memory, String chip, String camera) {
 		super();
 		this.name = name;
 		this.price = price;
@@ -61,6 +61,10 @@ public class Product {
 		this.numberOfProduct = numberOfProduct;
 		this.category = category;
 		this.image = image;
+		this.ram = ram;
+		this.memory = memory;
+		this.chip = chip;
+		this.camera = camera;
 	}
 
 	public String getImage() {
@@ -133,6 +137,38 @@ public class Product {
 
 	public void setListImage(List<ListImage> listImage) {
 		this.listImage = listImage;
+	}
+
+	public String getRam() {
+		return ram;
+	}
+
+	public void setRam(String ram) {
+		this.ram = ram;
+	}
+
+	public String getMemory() {
+		return memory;
+	}
+
+	public void setMemory(String memory) {
+		this.memory = memory;
+	}
+
+	public String getChip() {
+		return chip;
+	}
+
+	public void setChip(String chip) {
+		this.chip = chip;
+	}
+
+	public String getCamera() {
+		return camera;
+	}
+
+	public void setCamera(String camera) {
+		this.camera = camera;
 	}
 
 	@Override

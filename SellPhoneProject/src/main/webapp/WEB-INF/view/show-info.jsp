@@ -15,17 +15,17 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Hãng</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Tên điện thoại</li>
+            <li class="breadcrumb-item"><a href="#">${ product.category.category }</a></li>
+            <li class="breadcrumb-item active" aria-current="page">${product.name}</li>
         </ol>
     </nav>
 
-    <h3 class="title"><span>Tên điện thoại</span> <span class="share-button"><i class="fas fa-share"></i></span></h3>
+    <h3 class="title"><span>${ product.name }</span> <span class="share-button"><i class="fas fa-share"></i></span></h3>
     <div class="row show-info">
 
         <div class="col-sm-4">
             <div class="img-thumbnail main-img"><img
-                    src="https://cellphones.com.vn/media/catalog/product/cache/7/thumbnail/9df78eab33525d08d6e5fb8d27136e95/s/9/s9plus-purple_1.jpg"
+                    src="${ product.image }"
                     width="100%" height="100%">
             </div>
 
@@ -61,10 +61,10 @@
 
         <div class="col-sm-4">
             <h6>
-                <label>Giá: </label> <span class="price"> 100đ</span> <br>
+                <label>Giá: </label> <span class="price"> ${ product.getPrice() }</span> <br>
                 <label>Giá niêm yết:</label><span class="discount"> 200đ </span>
             </h6>
-            <label>Mô tả: </label><span> Description</span>
+            <label>Mô tả: </label><span> ${ product.description }</span>
             <button class="btn btn-outline-primary buynow">Mua ngay</button>
         </div>
 
@@ -74,16 +74,16 @@
                     <th scope="col">Thông số kỹ thuật</th>
                 </tr>
                 <tr>
-                    <td scope="row">RAM:</td>
+                    <td scope="row">RAM: ${ product.ram }</td>
                 </tr>
                 <tr>
-                    <td scope="row">Bộ nhớ trong:</td>
+                    <td scope="row">Bộ nhớ trong: ${ product.memory }</td>
                 </tr>
                 <tr>
-                    <td scope="row">Chip:</td>
+                    <td scope="row">Chip: ${ product.chip }</td>
                 </tr>
                 <tr>
-                    <td scope="row">Camera:</td>
+                    <td scope="row">Camera: ${ product.camera }</td>
                 </tr>
             </table>
         </div>

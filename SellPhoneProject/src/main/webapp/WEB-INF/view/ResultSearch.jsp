@@ -13,7 +13,7 @@
 		<h2 class="title">${ notResult }</h2>
 		<h2 class="title">${ result }</h2>
 		<div class="row">
-			<c:forEach var="product" items="${ result }">
+			<c:forEach var="product" items="${ listResult }">
 				<div class="col-md-4">
 					<div class="item text-center">
 						<a href=""><img src="${ product.getImage() }" width="270px" height="150px"

@@ -3,8 +3,11 @@ package com.sell.phone.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.sell.dao.impl.ProductImpl;
+import com.sell.entity.Product;
 import com.sell.service.CategoryService;
 
 @Controller
@@ -12,6 +15,9 @@ public class CategoryController {
 	@Autowired
 	CategoryService categoryService;
 
+	@Autowired
+	ProductImpl productImpl;
+	
 	@RequestMapping("/htc")
 	public String htc(Model model) {
 		categoryService.htc(model);
@@ -51,4 +57,12 @@ public class CategoryController {
 		categoryService.sony(model);
 		return "view/Category";
 	}
+	
+	@RequestMapping("Iphone/{id}")
+	public String sony(@PathVariable("id") int id, Model model) {
+		Product p = productImpl.getProduct(id);
+		model.addAttribute("product", p);
+		return "view/show-info";
+	}
+	
 }

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import com.sell.dao.CategoryDAO;
 import com.sell.entity.Category;
+import com.sell.entity.Product;
 import com.sell.hibernate.HibernateUI;
 @Component
 public class CategoryImpl implements CategoryDAO{
@@ -45,6 +46,14 @@ public class CategoryImpl implements CategoryDAO{
 		session.save(category);
 		session.beginTransaction().commit();
 		session.close();		
+	}
+	
+	public static void main(String[] args) {
+		CategoryImpl c = new CategoryImpl();
+		ProductImpl p = new ProductImpl();
+		Product product = p.getProduct(3);
+		product.getDescription();
+		System.out.println(product.getCategory().getCategory());
 	}
 
 }
