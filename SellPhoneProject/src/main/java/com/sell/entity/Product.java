@@ -17,17 +17,10 @@ import javax.persistence.Table;
 @Table(name = "product")
 public class Product {
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "numberProduct")
-=======
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="numberProduct")
->>>>>>> parent of 8057a19... add view and any
 	private int id;
 	@Column
 	private String name;
@@ -60,11 +53,7 @@ public class Product {
 	}
 
 	public Product(String name, double price, String description, double discount, int numberOfProduct,
-<<<<<<< HEAD
 			Category category, String image, String ram, String memory, String chip, String camera) {
-=======
-			Category category, String image) {
->>>>>>> parent of 8057a19... add view and any
 		super();
 		this.name = name;
 		this.price = price;
@@ -73,13 +62,10 @@ public class Product {
 		this.numberOfProduct = numberOfProduct;
 		this.category = category;
 		this.image = image;
-<<<<<<< HEAD
 		this.ram = ram;
 		this.memory = memory;
 		this.chip = chip;
 		this.camera = camera;
-=======
->>>>>>> parent of 8057a19... add view and any
 	}
 
 	public String getImage() {
@@ -153,8 +139,6 @@ public class Product {
 	public void setListImage(List<ListImage> listImage) {
 		this.listImage = listImage;
 	}
-
-<<<<<<< HEAD
 	public String getRam() {
 		return ram;
 	}
@@ -187,17 +171,11 @@ public class Product {
 		this.camera = camera;
 	}
 
-=======
->>>>>>> parent of 8057a19... add view and any
 	@Override
 	public String toString() {
 		return "Product [id=" + id + ", name=" + name + ", price=" + price + ", description=" + description
 				+ ", discount=" + discount + ", numberOfProduct=" + numberOfProduct + ", category=" + category
 				+ ", image=" + image + ", listImage=" + listImage + "]";
 	}
-<<<<<<< HEAD
->>>>>>> c8caac8777be131e73094d3e52d2959718faa85c
-=======
->>>>>>> parent of 8057a19... add view and any
 
 }

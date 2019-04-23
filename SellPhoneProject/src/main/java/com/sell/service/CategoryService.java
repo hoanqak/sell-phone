@@ -24,7 +24,7 @@ public class CategoryService {
 	public void htc(Model model, int page) {
 		Category category = new CategoryImpl().getCategory(1);
 		model.addAttribute("category", category.getCategory());
-		List<Product> list = Pagination.pagination(total, page, category.getId());
+		List<Product> list = pagination.pagination(total, page, category.getId());
 		model.addAttribute("type", "htc");
 		model.addAttribute("page", pagination.Page(category.getListProduct(), total));
 		model.addAttribute("product", list);
@@ -34,7 +34,7 @@ public class CategoryService {
 		Category category = new CategoryImpl().getCategory(2);
 		model.addAttribute("type", "iphone");
 		model.addAttribute("category", category.getCategory());
-		List<Product> list = Pagination.pagination(total, page, category.getId());
+		List<Product> list = pagination.pagination(total, page, category.getId());
 		model.addAttribute("page", pagination.Page(category.getListProduct(), total));
 		model.addAttribute("product", list);
 	}
@@ -43,8 +43,7 @@ public class CategoryService {
 		Category category = new CategoryImpl().getCategory(6);
 		model.addAttribute("category", category.getCategory());
 		model.addAttribute("type", "samsung");
-
-		List<Product> list = Pagination.pagination(total, page, category.getId());
+		List<Product> list = pagination.pagination(total, page, category.getId());
 		model.addAttribute("page", pagination.Page(category.getListProduct(), total));
 		model.addAttribute("product", list);
 	}
@@ -53,7 +52,7 @@ public class CategoryService {
 		Category category = new CategoryImpl().getCategory(3);
 		model.addAttribute("type", "nokia");
 		model.addAttribute("category", category.getCategory());
-		List<Product> list = Pagination.pagination(total, page, category.getId());
+		List<Product> list = pagination.pagination(total, page, category.getId());
 		model.addAttribute("page", pagination.Page(category.getListProduct(), total));
 		model.addAttribute("product", list);
 	}
@@ -62,7 +61,7 @@ public class CategoryService {
 		Category category = new CategoryImpl().getCategory(5);
 		model.addAttribute("type", "blackberry");
 		model.addAttribute("category", category.getCategory());
-		List<Product> list = Pagination.pagination(total, page, category.getId());
+		List<Product> list = pagination.pagination(total, page, category.getId());
 		model.addAttribute("page", pagination.Page(category.getListProduct(), total));
 		model.addAttribute("product", list);
 	}
@@ -70,18 +69,10 @@ public class CategoryService {
 	public void sony(Model model, int page) {
 		Category category = new CategoryImpl().getCategory(4);
 		model.addAttribute("category", category.getCategory());
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> parent of 8057a19... add view and any
 		model.addAttribute("product", product.getListProductByCategory(category));
-=======
 		model.addAttribute("type", "sony");
-		List<Product> list = Pagination.pagination(total, page, category.getId());
+		List<Product> list = pagination.pagination(total, page, category.getId());
 		model.addAttribute("page", pagination.Page(category.getListProduct(), total));
 		model.addAttribute("product", list);
->>>>>>> c8caac8777be131e73094d3e52d2959718faa85c
 	}
-
 }

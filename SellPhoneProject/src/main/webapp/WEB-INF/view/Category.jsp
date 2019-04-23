@@ -15,7 +15,7 @@
 				<div class="col-md-4">
 					<div class="item text-center">
 						<a
-							href="${ product.getCategory().getCategory() }/${ product.getId() }"><img
+							href="${ product.getCategory().getCategory() }/${ product.name }-${ product.getId() }"><img
 							src="${ product.getImage() }" width="270px" height="150px"
 							alt="ảnh điện thoại"></a>
 						<p class="ten-san-pham">

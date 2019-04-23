@@ -34,7 +34,7 @@ public class Search {
 		}
 		model.addAttribute("keyword", keyword);
 		model.addAttribute("page", pagination.Page(list, 12));
-		model.addAttribute("result", "Có " + size + " kết quả tìm kiếm cho " + keyword);
+		model.addAttribute("result", "Có " + size + " kết quả cho " + keyword);
 		model.addAttribute("listResult", pagination.paginationSearch(total, page, keyword));
 		return "view/ResultSearch";
 	}

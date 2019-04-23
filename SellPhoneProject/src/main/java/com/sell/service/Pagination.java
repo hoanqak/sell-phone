@@ -13,14 +13,12 @@ import com.sell.hibernate.HibernateUI;
 public class Pagination {
 
 	@SuppressWarnings("unchecked")
-	public static List<Product> pagination(int total, int page, int id) {
+	public List<Product> pagination(int total, int page, int id) {
 		List<Product> list = null;
 		int first = 0;
-
 		if(page > 1) {
 			first = (first + total) * (page - 1);
 		}
-		
 		Session session = HibernateUI.getSessionFactory().openSession();
 		Query query = session.createQuery("From " + Product.class.getName() + " as p where p.category = "+id+" order by p.id desc");
 		query.setFirstResult(first);
@@ -30,7 +28,7 @@ public class Pagination {
 		return list;
 
 	}
-	public static List<Product> pagination(int total, int page) {
+	public List<Product> pagination(int total, int page) {
 		List<Product> list = null;
 		int first = 0;
 
@@ -47,7 +45,7 @@ public class Pagination {
 		return list;
 
 	}
-	public static List<Product> paginationSearch(int total, int page, String keyword) {
+	public List<Product> paginationSearch(int total, int page, String keyword) {
 		List<Product> list = null;
 		int first = 0;
 
@@ -72,6 +70,10 @@ public class Pagination {
 		}
 		
 		return page;
+	}
+	
+	public static void main(String[] args) {
+		
 	}
 
 
