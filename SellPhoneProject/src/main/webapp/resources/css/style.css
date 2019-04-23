@@ -155,3 +155,35 @@ footer .copy{
         display: none;
     }
 }
+.title{
+    position: relative;
+}
+.title .share-button{
+    position: absolute;
+    right: 0px;
+}
+.price{
+    color: red;
+}
+.discount{
+    text-decoration: line-through;
+}
+.carousel-item img{
+    width: 100%;
+    height: 200px;
+}
+.next-prev{
+    color: black
+}
+.buynow{
+    display: block;
+    width: 100%
+}
+.show-info{
+    border-top: 1px solid #c6c8ca;;
+    border-bottom: 1px solid #c6c8ca;;
+    padding: 20px;
+}
+.info-main{
+    text-align: justify;
+}
