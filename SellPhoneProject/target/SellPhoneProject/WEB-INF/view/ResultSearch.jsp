@@ -10,7 +10,8 @@
 <body>
 
 	<section id="san-pham-moi">
-		<h2 class="title">Kết quả tìm kiếm cho ${ keyword }</h2>
+		<h2 class="title">${ notResult }</h2>
+		<h2 class="title">${ result }</h2>
 		<div class="row">
 			<c:forEach var="product" items="${ result }">
 				<div class="col-md-4">

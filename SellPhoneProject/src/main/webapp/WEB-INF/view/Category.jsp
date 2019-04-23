@@ -15,7 +15,7 @@
             <c:forEach var="product" items="${ product }">
                 <div class="col-md-4">
                     <div class="item text-center">
-                        <a href=""><img src="${ product.getImage() }" width="270px" height="150px"
+                        <a href="${category}/${ product.getCode()}-${ product.id}"><img src="${ product.getImage() }" width="270px" height="150px"
                                         alt="ảnh điện thoại"></a>
                         <p class="ten-san-pham">
                             <b><a href="">${ product.getName() }</a></b>

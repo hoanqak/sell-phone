@@ -55,5 +55,4 @@ public class ImageImpl implements ListImageDAO{
 		session.close();		
 	}
 
-
 }

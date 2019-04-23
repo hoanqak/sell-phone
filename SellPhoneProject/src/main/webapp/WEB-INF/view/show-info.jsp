@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: HoangHuy
@@ -9,81 +10,111 @@
 <html>
 <head>
     <title>Info </title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <c:url var="style" value="resources/css/style.css"></c:url>
+    <c:url var="bootstrap" value="resources/css/bootstrap.css"></c:url>
+    <link rel="stylesheet" href="${ bootstrap }">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="${ style }">
+    <c:url var="jquery" value="resources/js/jquery-3.3.1.js"></c:url>
+    <script src="${ jquery }"></script>
+    <c:url var="bootstrap" value="resources/js/bootstrap.js"></c:url>
+    <script src="${ bootstrap }"></script>
 </head>
 <body>
 <div class="container">
+
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Hãng</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Tên điện thoại</li>
+            <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a
+                    href="/SellPhoneProject_war/${ product.getCategory().getCategory().toLowerCase()}">${ product.getCategory().getCategory()}</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">${ product.getName()}</li>
         </ol>
     </nav>
 
-    <h3 class="title"><span>Tên điện thoại</span> <span class="share-button"><i class="fas fa-share"></i></span></h3>
+    <h3 class="title"><span>${ product.getName()}</span> <span class="share-button"><i class="fas fa-share"></i></span>
+    </h3>
     <div class="row show-info">
 
         <div class="col-sm-4">
             <div class="img-thumbnail main-img"><img
-                    src="https://cellphones.com.vn/media/catalog/product/cache/7/thumbnail/9df78eab33525d08d6e5fb8d27136e95/s/9/s9plus-purple_1.jpg"
+                    src="${ product.getImage()}"
                     width="100%" height="100%">
             </div>
 
             <!-- Slide -->
-            <div id="carouselExampleControls" class="carousel slide mt-4" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100"
-                             src="https://cellphones.com.vn/media/catalog/product/cache/7/thumbnail/115x/9df78eab33525d08d6e5fb8d27136e95/s/9/s9plus-blue.jpg"
-                             alt="First slide">
+            <c:if test="${ product.getListImage().size() > 0}">
+                <div id="carouselExampleControls" class="carousel slide mt-4" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <c:set var="i" value="1"/>
+                        <c:forEach var="img" items="${product.getListImage()}">
+                            <c:choose>
+                                <c:when test="${ i == 1}">
+                                    <div class="carousel-item active">
+                                        <img class="d-block w-100" src="${ img.getImage()  }">
+                                    </div>
+                                    <c:set var="i" value="0"/>
+                                </c:when>
+                                <c:otherwise>
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="${ img.getImage()  }">
+                                    </div>
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
                     </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100"
-                             src="https://cellphones.com.vn/media/catalog/product/cache/7/thumbnail/115x/9df78eab33525d08d6e5fb8d27136e95/s/9/s9plus-black-back.png"
-                             alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100"
-                             src="https://cellphones.com.vn/media/catalog/product/cache/7/thumbnail/115x/9df78eab33525d08d6e5fb8d27136e95/s/m/sm-g965n_002_back_burgundy_red_1.jpg"
-                             alt="Third slide">
-                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="fas fa-chevron-left next-prev" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next " href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="fas fa-chevron-right next-prev" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                    <span class="fas fa-chevron-left next-prev" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next " href="#carouselExampleControls" role="button" data-slide="next">
-                    <span class="fas fa-chevron-right next-prev" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
+            </c:if>
         </div>
 
         <div class="col-sm-4">
-            <h6>
-                <label>Giá: </label> <span class="price"> 100đ</span> <br>
-                <label>Giá niêm yết:</label><span class="discount"> 200đ </span>
-            </h6>
-            <label>Mô tả: </label><span> Description</span>
+            <c:choose>
+                <c:when test="${ product.getDiscount() > 0}">
+                    <c:set var="discount" value="${product.getPrice() - product.getDiscount()}"/>
+                    <h6>
+                        <label>Giá: </label> <span class="price"> ${discount}</span> <br>
+                        <label>Giá niêm yết:</label><span class="discount"> ${product.getPrice()} </span>
+                    </h6>
+                </c:when>
+                <c:otherwise>
+                    <h6>
+                        <label>Giá: </label> <span class="price"> ${product.getPrice()}</span>
+                    </h6>
+                </c:otherwise>
+            </c:choose>
+            <label>Mô tả: </label><span> ${ product.getDescription()}</span>
             <button class="btn btn-outline-primary buynow">Mua ngay</button>
         </div>
 
         <div class="col-sm-4">
-            <table class="table table-hover ">
+            <table class="table">
                 <tr class="table-dark">
                     <th scope="col">Thông số kỹ thuật</th>
                 </tr>
                 <tr>
-                    <td scope="row">RAM:</td>
+                    <td scope="row">RAM: ${ product.getRam()}</td>
                 </tr>
                 <tr>
-                    <td scope="row">Bộ nhớ trong:</td>
+                    <td scope="row">Bộ nhớ trong: ${ product.getMemory()}</td>
                 </tr>
                 <tr>
-                    <td scope="row">Chip:</td>
+                    <td scope="row">Chip: ${ product.getChip()}</td>
                 </tr>
                 <tr>
-                    <td scope="row">Camera:</td>
+                    <td scope="row">Camera: ${ product.getCamera()}</td>
                 </tr>
             </table>
         </div>

@@ -17,129 +17,164 @@ import javax.persistence.Table;
 @Table(name = "product")
 public class Product {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="numberProduct")
-	private int id;
-	@Column
-	private String name;
-	@Column
-	private double price;
-	@Column
-	private String description;
-	@Column
-	private double discount;
-	@Column(name = "number_of_product")
-	private int numberOfProduct;
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "category_id")
-	private Category category;
-	@Column
-	private String image;
-	@Column
-	private String ram;
-	@Column
-	private String memory;
-	@Column
-	private String chip;
-	@Column
-	private String camera;
-	@OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
-	private List<ListImage> listImage;
 
-	public Product() {
-		super();
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "numberProduct")
+    private int id;
+    @Column
+    private String name;
+    @Column
+    private double price;
+    @Column
+    private String description;
+    @Column
+    private double discount;
+    @Column(name = "number_of_product")
+    private int numberOfProduct;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id")
+    private Category category;
+    @Column
+    private String image;
+    @Column
+    private String ram;
+    @Column
+    private String memory;
+    @Column
+    private String chip;
+    @Column
+    private String camera;
+    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
+    private List<ListImage> listImage;
 
-	public Product(String name, double price, String description, double discount, int numberOfProduct,
-			Category category, String image) {
-		super();
-		this.name = name;
-		this.price = price;
-		this.description = description;
-		this.discount = discount;
-		this.numberOfProduct = numberOfProduct;
-		this.category = category;
-		this.image = image;
-	}
+    public Product() {
+        super();
+    }
 
-	public String getImage() {
-		return image;
-	}
+    public Product(String name, double price, String description, double discount, int numberOfProduct,
+                   Category category, String image) {
+        super();
+        this.name = name;
+        this.price = price;
+        this.description = description;
+        this.discount = discount;
+        this.numberOfProduct = numberOfProduct;
+        this.category = category;
+        this.image = image;
+    }
 
-	public void setImage(String image) {
-		this.image = image;
-	}
+    public String getImage() {
+        return this.image;
+    }
 
-	public int getId() {
-		return id;
-	}
+    public String getCode(){
+        return this.getName().replace(" ", "-").toLowerCase();
+    }
+    public void setImage(String image) {
+        this.image = image;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public double getPrice() {
-		return price;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setPrice(double price) {
-		this.price = price;
-	}
+    public double getPrice() {
+        return price;
+    }
 
-	public String getDescription() {
-		return description;
-	}
+    public void setPrice(double price) {
+        this.price = price;
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public String getDescription() {
+        return description;
+    }
 
-	public double getDiscount() {
-		return discount;
-	}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	public void setDiscount(double discount) {
-		this.discount = discount;
-	}
+    public double getDiscount() {
+        return discount;
+    }
 
-	public int getNumberOfProduct() {
-		return numberOfProduct;
-	}
+    public void setDiscount(double discount) {
+        this.discount = discount;
+    }
 
-	public void setNumberOfProduct(int numberOfProduct) {
-		this.numberOfProduct = numberOfProduct;
-	}
+    public int getNumberOfProduct() {
+        return numberOfProduct;
+    }
 
-	public Category getCategory() {
-		return category;
-	}
+    public void setNumberOfProduct(int numberOfProduct) {
+        this.numberOfProduct = numberOfProduct;
+    }
 
-	public void setCategory(Category category) {
-		this.category = category;
-	}
+    public Category getCategory() {
+        return category;
+    }
 
-	public List<ListImage> getListImage() {
-		return listImage;
-	}
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 
-	public void setListImage(List<ListImage> listImage) {
-		this.listImage = listImage;
-	}
+    public List<ListImage> getListImage() {
+        return listImage;
+    }
 
-	@Override
-	public String toString() {
-		return "Product [id=" + id + ", name=" + name + ", price=" + price + ", description=" + description
-				+ ", discount=" + discount + ", numberOfProduct=" + numberOfProduct + ", category=" + category
-				+ ", image=" + image + ", listImage=" + listImage + "]";
-	}
+    public void setListImage(List<ListImage> listImage) {
+        this.listImage = listImage;
+    }
 
+    @Override
+    public String toString() {
+        return "Product [id=" + id + ", name=" + name + ", price=" + price + ", description=" + description
+                + ", discount=" + discount + ", numberOfProduct=" + numberOfProduct + ", category=" + category
+                + ", image=" + image + ", listImage=" + listImage + "]";
+    }
+
+    public String getRam() {
+        return ram;
+    }
+
+    public void setRam(String ram) {
+        this.ram = ram;
+    }
+
+    public String getMemory() {
+        return memory;
+    }
+
+    public void setMemory(String memory) {
+        this.memory = memory;
+    }
+
+    public String getChip() {
+        return chip;
+    }
+
+    public void setChip(String chip) {
+        this.chip = chip;
+    }
+
+    public String getCamera() {
+        return camera;
+    }
+
+    public void setCamera(String camera) {
+        this.camera = camera;
+    }
 }

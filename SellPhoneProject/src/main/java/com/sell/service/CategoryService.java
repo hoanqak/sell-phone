@@ -50,7 +50,6 @@ public class CategoryService {
 	public void sony(Model model) {
 		Category category = new CategoryImpl().getCategory(4);
 		model.addAttribute("category", category.getCategory());
-
 		model.addAttribute("product", product.getListProductByCategory(category));
 	}
 

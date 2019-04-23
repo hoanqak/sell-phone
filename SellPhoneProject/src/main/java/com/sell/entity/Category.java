@@ -41,7 +41,7 @@ public class Category {
 	}
 
 	public String getCategory() {
-		return category;
+		return this.category;
 	}
 
 	public void setCategory(String category) {
@@ -55,5 +55,4 @@ public class Category {
 	public void setListProduct(List<Product> listProduct) {
 		this.listProduct = listProduct;
 	}
-
 }
