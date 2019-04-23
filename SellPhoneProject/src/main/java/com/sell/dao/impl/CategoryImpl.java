@@ -10,6 +10,7 @@ import com.sell.entity.Category;
 import com.sell.hibernate.HibernateUI;
 @Component
 public class CategoryImpl implements CategoryDAO{
+	//Lấy danh sách các category
 	public List<Category> getListCategory() {
 		Session session = HibernateUI.getSessionFactory().openSession();
 		List<Category> list = session.createQuery("From " + Category.class.getName()).getResultList();
@@ -17,6 +18,7 @@ public class CategoryImpl implements CategoryDAO{
 		return list;
 	}
 
+	//Lấy 1 obj category theo id
 	public Category getCategory(int id) {
 		Session session = HibernateUI.getSessionFactory().openSession();
 		Category category = session.get(Category.class, id);

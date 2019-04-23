@@ -15,11 +15,6 @@ public class SearchController {
 
 	@RequestMapping("/result")
 	public String resultSearch(@RequestParam("search") String keyword, Model model) {
-		System.out.println(keyword);
-		Search search = new Search();
-		List<Product> list = search.getResultSearch(keyword);
-		model.addAttribute("result", list);
-		model.addAttribute("keyword", keyword);
 		return "view/ResultSearch";
 	}
 	
