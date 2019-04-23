@@ -12,6 +12,7 @@ import com.sell.hibernate.HibernateUI;
 public class CategoryImpl implements CategoryDAO{
 	public List<Category> getListCategory() {
 		Session session = HibernateUI.getSessionFactory().openSession();
+		@SuppressWarnings("unchecked")
 		List<Category> list = session.createQuery("From " + Category.class.getName()).getResultList();
 		session.close();
 		return list;
