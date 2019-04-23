@@ -19,6 +19,9 @@ public class MainController {
 		homeController.index(model);
 		return "view/Home";
 	}
-	
+	@RequestMapping("/show-info")
+	public String showinfo(){
+		return "view/show-info";
+	}
 	
 }
