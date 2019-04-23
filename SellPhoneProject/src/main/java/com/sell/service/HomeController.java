@@ -8,11 +8,12 @@ import com.sell.dao.impl.ProductImpl;
 @Service
 public class HomeController {
 
+	int numberOfProduct = 9;
 	@Autowired
 	ProductImpl product;
 	public String index(Model model) {
-		model.addAttribute("listProductHightLight", product.getProductNew(15));
-		model.addAttribute("listProductNew", product.getProductNew(15));
+		model.addAttribute("listProductHightLight", product.getProductNew(numberOfProduct));
+		model.addAttribute("listProductNew", product.getProductNew(numberOfProduct));
 		return "view/Home";
 	}
 	

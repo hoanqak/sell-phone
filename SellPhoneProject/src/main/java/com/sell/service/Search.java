@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.Query;
 
 import org.hibernate.Session;
+import org.springframework.ui.Model;
 
 import com.sell.entity.Product;
 import com.sell.hibernate.HibernateUI;
@@ -20,11 +21,14 @@ public class Search {
 
 	}
 
-	public boolean check(List<Product> list) {
-		if (list.size() == 0) {
-			return false;
+	public String check(String keyword, Model model) {
+		if(getResultSearch(keyword).size() == 0) {
+			model.addAttribute("notResult", "Không có kết quả nào cho " + keyword);
+			return "view/ResultSearch";
 		}
-		return true;
+		model.addAttribute("result", "Có " + getResultSearch(keyword).size() + " kết quả tìm kiếm cho " + keyword);
+		model.addAttribute("listResult", getResultSearch(keyword));
+		return "view/ResultSearch";
 	}
 
 	public static void main(String[] args) {

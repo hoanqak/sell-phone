@@ -14,6 +14,7 @@ import com.sell.hibernate.HibernateUI;
 @Component
 public class ProductImpl implements ProductDAO {
 
+	// lấy obj product
 	public Product getProduct(int id) {
 		Session session = HibernateUI.getSessionFactory().openSession();
 		Product product = session.get(Product.class, id);
@@ -43,10 +44,12 @@ public class ProductImpl implements ProductDAO {
 
 	}
 
+	//lấy list product theo category
 	public List<Product> getListProductByCategory(Category category) {
 		return category.getListProduct();
 	}
 
+	// lấy all product
 	public List<Product> getAllListProduct() {
 		@SuppressWarnings("unchecked")
 		List<Product> list = HibernateUI.getSessionFactory().openSession()
@@ -55,6 +58,7 @@ public class ProductImpl implements ProductDAO {
 		return list;
 	}
 
+	//lấy list product nổi bật
 	public List<Product> getProductHightLights(int number) {
 		Session session = HibernateUI.getSessionFactory().openSession();
 		Query query = session.createQuery("From " + Product.class.getName() +" as p order by p.price desc");
@@ -67,6 +71,7 @@ public class ProductImpl implements ProductDAO {
 
 	}
 
+	// lấy số product mới nhất
 	public List<Product> getProductNew(int number) {
 		Session session = HibernateUI.getSessionFactory().openSession();
 		Query query = session.createQuery("From " + Product.class.getName() +" as p order by p.id ");

@@ -13,6 +13,7 @@ import com.sell.hibernate.HibernateUI;
 @Component
 public class ImageImpl implements ListImageDAO{
 	SessionFactory factory = HibernateUI.getSessionFactory();
+	//Lấy danh sách các ảnh
 	public List<ListImage> getAllListImage() {
 		Session session = factory.openSession();
 		List<ListImage> list = session.createQuery("From " + ListImage.class.getName()).getResultList();
@@ -20,10 +21,12 @@ public class ImageImpl implements ListImageDAO{
 		return list;
 	}
 
+	//Lấy list ảnh của 1 product
 	public List<ListImage> getListImageByProduct(Product product) {
 		return product.getListImage();
 	}
 
+	//lấy list ảnh theo id
 	public ListImage getImage(int id) {
 		Session session = factory.openSession();
 		ListImage image = session.get(ListImage.class, id);
