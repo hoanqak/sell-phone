@@ -27,20 +27,16 @@ public class Search {
 	public String push(String keyword, Model model, int page) {
 		Pagination pagination = new Pagination();
 		List<Product> list = getResultSearch(keyword);
-		if(list.size() == 0) {
+		int size = list.size();
+		if(size == 0) {
 			model.addAttribute("notResult", "Không có kết quả nào cho " + keyword);
 			return "view/ResultSearch";
 		}
+		model.addAttribute("keyword", keyword);
 		model.addAttribute("page", pagination.Page(list, 12));
-		model.addAttribute("result", "Có " + getResultSearch(keyword).size() + " kết quả tìm kiếm cho " + keyword);
-		model.addAttribute("listResult", pagination.pagination(total, page));
+		model.addAttribute("result", "Có " + size + " kết quả tìm kiếm cho " + keyword);
+		model.addAttribute("listResult", pagination.paginationSearch(total, page, keyword));
 		return "view/ResultSearch";
 	}
 
-	public static void main(String[] args) {
-		Search s = new Search();
-		for (Product p : s.getResultSearch("Ipho")) {
-			System.out.println(p.getName());
-		}
-	}
 }

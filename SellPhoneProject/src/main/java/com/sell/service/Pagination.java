@@ -47,8 +47,25 @@ public class Pagination {
 		return list;
 
 	}
+	public static List<Product> paginationSearch(int total, int page, String keyword) {
+		List<Product> list = null;
+		int first = 0;
+
+		if(page > 1) {
+			first = (first + total) * (page - 1);
+		}
+		
+		Session session = HibernateUI.getSessionFactory().openSession();
+		Query query = session.createQuery("From " + Product.class.getName() + " as p where p.name like '%"+ keyword +"%' order by p.id desc");
+		query.setFirstResult(first);
+		System.out.println("First " +first);
+		query.setMaxResults(total);
+		list = query.getResultList();
+		return list;
+
+	}
 	
-	public static int Page(List<Product> list, int total) {
+	public int Page(List<Product> list, int total) {
 		int page = list.size() / total;
 		if(list.size() % total != 0) {
 			page += 1;
@@ -56,14 +73,6 @@ public class Pagination {
 		
 		return page;
 	}
-	
 
-	public static void main(String[] args) {
-		int page = 0;
-		for(Product product : pagination(5, page, 2)) {
-			System.out.println(product.getId());
-		}
-		System.out.println(Page(pagination(5, page, 1), 5));
-	}
 
 }
