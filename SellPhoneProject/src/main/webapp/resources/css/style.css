@@ -229,8 +229,3 @@ footer .copy {
 .info-main {
     text-align: justify;
 }
-.table-dark,
-.table-dark > th,
-.table-dark > td {
-    background-color: #343a40 !important;
-}

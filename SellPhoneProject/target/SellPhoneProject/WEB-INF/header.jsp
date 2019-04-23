@@ -28,10 +28,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <a href="/SellPhoneProject_war">
-                        <i class="fas fa-home"
-                           style="color: white; font-size: 30px;text-align: center;line-height: 100%;"></i>
-                    </a>
+                    <figure id="logo">
+                        <img class="img-responsive" src="img/logo.png">
+                    </figure>
                 </div>
                 <div class="col-md-6">
                     <form class="form-inline form-tim-kiem" action="result" method="get">
@@ -41,12 +40,11 @@
                 </div>
             </div>
         </div>
-    </div>
-    <!-- nút bấm menu mobile-->
-    <button class="navbar-toggler navbar-light bg-light" type="button"
-            data-toggle="collapse" data-target="#main-menu">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+        <!-- nút bấm menu mobile-->
+        <button class="navbar-toggler navbar-light bg-light" type="button"
+                data-toggle="collapse" data-target="#main-menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
     </div>
     <div class="container">
         <!--menu-->
@@ -70,24 +68,24 @@
         <div class="row">
             <div class="col-md-3">
                 <div id="logo-footer">
-                    LOGO
+                    <img src="img/logo-footer.png">
                 </div>
                 <p>hihi</p>
             </div>
             <div class="col-md-3">
                 <h3 class="title-footer">Địa chỉ</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500</p>
+                <p>hahah</p>
+                <p>hhu</p>
             </div>
             <div class="col-md-3">
                 <h3 class="title-footer">Dịch vụ</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500</p>
+                <p>hihi</p>
+                <p>aa</p>
             </div>
             <div class="col-md-3">
                 <h3 class="title-footer">Hotline</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500</p>
+                <p>aa</p>
+                <p>aa</p>
             </div>
         </div>
     </div>

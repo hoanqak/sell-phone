@@ -15,4 +15,5 @@ public interface ProductDAO {
 	public void insertProduct(Product product);
 	public List<Product> getProductNew(int number);
 	public List<Product> getProductHightLights(int number);
+	
 }

@@ -71,6 +71,10 @@ public class CategoryService {
 		Category category = new CategoryImpl().getCategory(4);
 		model.addAttribute("category", category.getCategory());
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 8057a19... add view and any
 		model.addAttribute("product", product.getListProductByCategory(category));
 =======
 		model.addAttribute("type", "sony");
