@@ -9,6 +9,8 @@
 </head>
 <body>
 
+	<c:set var="keyword" value="${ keyword }"></c:set>
+
 	<section id="san-pham-moi">
 		<h2 class="title">${ notResult }</h2>
 		<h2 class="title">${ result }</h2>
@@ -29,5 +31,10 @@
 			</c:forEach>
 		</div>
 	</section>
+	<c:if test="${ page > 1 }">
+		<c:forEach var="i" begin="1" end="${ page }">
+			<a href="result-search-page-${ i }">Page ${ i }</a>
+		</c:forEach>
+	</c:if>
 </body>
 </html>

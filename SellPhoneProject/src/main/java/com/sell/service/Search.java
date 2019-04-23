@@ -12,23 +12,28 @@ import com.sell.entity.Product;
 import com.sell.hibernate.HibernateUI;
 @Service
 public class Search {
+	int total = 12;
 	public List<Product> getResultSearch(String keyword) {
 		Session session = HibernateUI.getSessionFactory().openSession();
-		@SuppressWarnings("unchecked")
 		Query query = session.createQuery("From Product as P Where P.name like '%" + keyword + "%'");
+		@SuppressWarnings("unchecked")
 		List<Product> list = query.getResultList();
 		session.close();
 		return list;
 
 	}
 
-	public String check(String keyword, Model model) {
-		if(getResultSearch(keyword).size() == 0) {
+	@SuppressWarnings("static-access")
+	public String push(String keyword, Model model, int page) {
+		Pagination pagination = new Pagination();
+		List<Product> list = getResultSearch(keyword);
+		if(list.size() == 0) {
 			model.addAttribute("notResult", "Không có kết quả nào cho " + keyword);
 			return "view/ResultSearch";
 		}
+		model.addAttribute("page", pagination.Page(list, 12));
 		model.addAttribute("result", "Có " + getResultSearch(keyword).size() + " kết quả tìm kiếm cho " + keyword);
-		model.addAttribute("listResult", getResultSearch(keyword));
+		model.addAttribute("listResult", pagination.pagination(total, page));
 		return "view/ResultSearch";
 	}
 

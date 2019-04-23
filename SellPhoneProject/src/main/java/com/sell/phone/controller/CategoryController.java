@@ -20,49 +20,75 @@ public class CategoryController {
 	
 	@RequestMapping("/htc")
 	public String htc(Model model) {
-		categoryService.htc(model);
+		categoryService.htc(model, 1);
 		return "view/Category";
 	}
 
 	@RequestMapping("/iphone")
 	public String iphone(Model model) {
-		categoryService.iphone(model);
+		categoryService.iphone(model, 1);
 
 		return "view/Category";
 	}
 
 	@RequestMapping("/samsung")
 	public String samsung(Model model) {
-		categoryService.samsung(model);
+		categoryService.samsung(model, 1);
 
 		return "view/Category";
 	}
 
 	@RequestMapping("/nokia")
 	public String nokia(Model model) {
-		categoryService.nokia(model);
+		categoryService.nokia(model, 1);
 
 		return "view/Category";
 	}
 
 	@RequestMapping("/blackberry")
 	public String blackberry(Model model) {
-		categoryService.blackberry(model);
+		categoryService.blackberry(model, 1);
 
 		return "view/Category";
 	}
 
 	@RequestMapping("/sony")
 	public String sony(Model model) {
-		categoryService.sony(model);
+		categoryService.sony(model, 1);
 		return "view/Category";
 	}
 	
-	@RequestMapping("Iphone/{id}")
-	public String sony(@PathVariable("id") int id, Model model) {
-		Product p = productImpl.getProduct(id);
-		model.addAttribute("product", p);
-		return "view/show-info";
+	@RequestMapping("htc-page-{i}")
+	public String htcPage(@PathVariable("i") int page, Model model) {
+		categoryService.htc(model, page);
+		return "view/Category";
+
+	}
+	@RequestMapping("sony-page-{i}")
+	public String sonyPage(@PathVariable("i") int page, Model model) {
+		categoryService.sony(model, page);
+		return "view/Category";
+	}
+	@RequestMapping("samsung-page-{i}")
+	public String samsungPage(@PathVariable("i") int page, Model model) {
+		categoryService.samsung(model, page);
+		return "view/Category";
+	}
+	@RequestMapping("iphone-page-{i}")
+	public String iphonePage(@PathVariable("i") int page, Model model) {
+		categoryService.iphone(model, page);
+		return "view/Category";
+	}
+	@RequestMapping("blackberry-page-{i}")
+	public String blackberryPage(@PathVariable("i") int page, Model model) {
+		categoryService.blackberry(model, page);
+		return "view/Category";
+	}
+	
+	@RequestMapping("nokia-page-{i}")
+	public String nokiaPage(@PathVariable("i") int page, Model model) {
+		categoryService.nokia(model, page);
+		return "view/Category";
 	}
 	
 }

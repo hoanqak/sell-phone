@@ -1,7 +1,8 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
+
 /*
 .item{
     width: 100%;
@@ -11,21 +12,25 @@
 }*/
 
 /*==============header===============*/
-header .container-fluid{
+header .container-fluid {
     background: #222;
     padding: 16px 0;
 }
-body{
+
+body {
     background: #e7ecf4;
 }
-img{
+
+img {
     max-width: 100%;
     height: auto;
 }
-figure{
+
+figure {
     margin: 0;
 }
-.form-tim-kiem input[type=text]{
+
+.form-tim-kiem input[type=text] {
     height: 30px;
     line-height: 30px;
     width: 270px;
@@ -34,7 +39,8 @@ figure{
     border: 1px solid #fff;
     outline: none;
 }
-.form-tim-kiem button{
+
+.form-tim-kiem button {
     height: 30px;
     width: 100px;
     padding: 0 9px;
@@ -44,10 +50,12 @@ figure{
     border: 1px solid #eb1f27;
     outline: none;
 }
-#cart a{
+
+#cart a {
     color: #fff;
 }
-#cart .cart{
+
+#cart .cart {
     width: 30px;
     height: 30px;
     background: #eb1f27;
@@ -57,15 +65,18 @@ figure{
     line-height: 30px;
     cursor: pointer;
 }
-#main-menu ul{
+
+#main-menu ul {
     margin-bottom: 15px;
     list-style: none;
     background: #eb1f27;
 }
-#main-menu ul li{
+
+#main-menu ul li {
     display: inline-block;
 }
-#main-menu ul li a{
+
+#main-menu ul li a {
     color: #fff;
     height: 40px;
     line-height: 40px;
@@ -73,117 +84,148 @@ figure{
     padding: 0 15px;
     text-decoration: none;
 }
+
 /*==============end header===============*/
-aside img{
+aside img {
     margin-bottom: 15px;
 }
+
 /*==============sản phẩm===============*/
-.title{
+.title {
     font-size: 18px;
     margin: 20px 0;
 }
-.item{
+
+.item {
     border: 1px solid #ccc;
     border-radius: 5px;
     padding-top: 15px;
     margin-bottom: 10px;
     background: #fff;
 }
-.item img{
+
+.item img {
+    max-width: 90%;
+    height: 150px;
     margin-bottom: 20px;
 }
-.item p{
+
+.item p {
     font-size: 14px;
 }
-.item p.ten-san-pham a{
+
+.item p.ten-san-pham a {
     color: #000;
 }
-.item p span.price{
+
+.item p span.price {
     color: #eb1f27;
     font-weight: 600;
 }
-.item:hover img{
+
+.item:hover img {
     opacity: 0.5;
 }
-#san-pham-noi-bat .row, #san-pham-moi .row{
+
+#san-pham-noi-bat .row, #san-pham-moi .row {
     margin-left: -5px;
     margin-right: -5px;
 }
-#san-pham-noi-bat [class*="col-"], #san-pham-moi [class*="col-"]{
+
+#san-pham-noi-bat [class*="col-"], #san-pham-moi [class*="col-"] {
     padding-left: 5px;
     padding-right: 5px;
 }
-#san-pham-moi{
+
+#san-pham-moi {
     margin-bottom: 30px;
 }
+
 /*==============end sản phẩm===============*/
 /*==============footer===============*/
-footer{
+footer {
     background: #fff;
     padding-top: 25px;
 }
-footer #logo-footer{
+
+footer #logo-footer {
     margin-bottom: 15px;
 }
-footer .title-footer{
+
+footer .title-footer {
     padding-bottom: 15px;
     margin-bottom: 15px;
     font-size: 18px;
     border-bottom: 1px solid #000;
 }
-footer .copy{
+
+footer .copy {
     background: #222;
     color: #e7ecf4;
     padding: 12px 0;
 }
-@media(max-width: 768px){
-    header .navbar-toggler{
+
+@media (max-width: 768px) {
+    header .navbar-toggler {
         display: block;
     }
-    #main-menu ul li{
+
+    #main-menu ul li {
         display: block;
     }
-    aside#side-banner{
+
+    aside#side-banner {
         display: none;
     }
 }
-@media(min-width: 768px){
-    #main-menu{
+
+@media (min-width: 768px) {
+    #main-menu {
         display: block;
     }
-    header .navbar-toggler{
+
+    header .navbar-toggler {
         display: none;
     }
 }
-.title{
+
+.title {
     position: relative;
 }
-.title .share-button{
+
+.title .share-button {
     position: absolute;
     right: 0px;
 }
-.price{
+
+.price {
     color: red;
 }
-.discount{
+
+.discount {
     text-decoration: line-through;
 }
-.carousel-item img{
+
+.carousel-item img {
     width: 100%;
     height: 200px;
 }
-.next-prev{
+
+.next-prev {
     color: black
 }
-.buynow{
+
+.buynow {
     display: block;
     width: 100%
 }
-.show-info{
+
+.show-info {
     border-top: 1px solid #c6c8ca;;
     border-bottom: 1px solid #c6c8ca;;
     padding: 20px;
 }
-.info-main{
+
+.info-main {
     text-align: justify;
 }
